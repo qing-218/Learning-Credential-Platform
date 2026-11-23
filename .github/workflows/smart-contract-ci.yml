@@ -64,6 +64,7 @@ jobs:
       - name: Run Slither
         run: |
           mkdir -p reports/security
+          run: rm -f reports/security/slither-ci.json
           slither . --json reports/security/slither-ci.json
 
       # 11. Upload test and security reports
