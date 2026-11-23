@@ -31,44 +31,48 @@ jobs:
 
       # 4. Compile Solidity contracts
       - name: Compile contracts
-        run: npm run compile 
-        
+        run: npm run compile
+
       # 5. Run automated tests
       - name: Run automated tests
         run: npm run test
 
-      # 6. Measure code coverage
-      - name: Measure code coverage
-        run: npm run coverage
-
-      # 7. Set up Python for Slither
+      # 6. Set up Python for Slither
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # 8. Install Slither and solc-select
+      # 7. Install Slither and solc-select
       - name: Install security tools
         run: |
           python -m pip install --upgrade pip
           python -m pip install slither-analyzer solc-select
 
-      # 9. Install the required Solidity compiler
+      # 8. Install the required Solidity compiler
       - name: Setup Solidity compiler
         run: |
           solc-select install 0.8.34
           solc-select use 0.8.34
           solc --version
 
-      # 10. Run Slither security analysis
+      # 9. Run Slither security analysis
+      # Run before coverage to avoid coverage-generated temporary files
       - name: Run Slither
         run: |
           mkdir -p reports/security
           rm -f reports/security/slither-ci.json
+
+          npx hardhat clean
+          npx hardhat compile
+
           slither . \
-            --ignore-compile \
             --filter-paths "node_modules" \
             --json reports/security/slither-ci.json
+
+      # 10. Measure code coverage
+      - name: Measure code coverage
+        run: npm run coverage
 
       # 11. Upload test and security reports
       - name: Upload reports
