@@ -1,0 +1,19 @@
+C:\Yiting File\HKUST\Autumn Fall\BlockChain\Assignment2\problem2>npx hardhat test test/AchievementManager.test.js
+
+Compiled 2 Solidity files with solc 0.8.34 (evm target: osaka)
+Running node:test tests
+
+  AchievementManager
+    ✔ Should calculate Bronze tier
+    ✔ Should calculate Silver tier
+    ✔ Should calculate Gold tier
+    ✔ Should calculate Platinum tier
+    ✔ Should reject unauthorized point updates
+    ✔ Should increase learner points
+    ✔ Should deduct points after credential revocation
+    ✔ Should reject point deduction exceeding balance
+
+
+8 passing (8 nodejs)
+
+WARNING: hre.network.connect() is deprecated and will be removed in a future version. Use hre.network.create() or hre.network.getOrCreate() instead.

@@ -1,0 +1,70 @@
+C:\Yiting File\HKUST\Autumn Fall\BlockChain\Assignment2\problem2>npx hardhat test
+No contracts to compile
+
+Running Solidity tests
+
+  contracts/Counter.t.sol:CounterTest
+    ✔ test_InitialValue()
+    ✔ test_IncByZero()
+    ✔ testFuzz_Inc(uint8) (runs: 256)
+
+Running node:test tests
+
+  AchievementManager
+    ✔ Should calculate Bronze tier
+    ✔ Should calculate Silver tier
+    ✔ Should calculate Gold tier
+    ✔ Should calculate Platinum tier
+    ✔ Should reject unauthorized point updates
+    ✔ Should increase learner points
+    ✔ Should deduct points after credential revocation
+    ✔ Should reject point deduction exceeding balance
+
+  Counter
+    ✔ Should emit the Increment event when calling the inc() function (97ms)
+    ✔ The sum of the Increment events should match the current value
+
+  CredentialNFT
+    ✔ Should issue an NFT credential successfully
+    ✔ Should assign achievement points after issuance
+    ✔ Should automatically reward 5 LRN after credential issuance
+    ✔ Should reject issuance by an unapproved institution
+    ✔ Should reject zero learner address
+    ✔ Should reject empty metadata URI
+    ✔ Should reject NFT transfer
+    ✔ Should revoke a credential without deleting the NFT
+    ✔ Should deduct points after revocation
+    ✔ Should preserve LRN rewards after credential revocation
+    ✔ Should reject unauthorized revocation
+    ✔ Should reject duplicate revocation
+    ✔ Should reject verification of a nonexistent credential
+    ✔ Should reject revocation of a nonexistent credential
+    ✔ Should correctly update points and rewards when multiple credentials are issued and revoked
+
+  InstitutionRegistry
+    ✔ Should assign administrator role to deployer
+    ✔ Should approve an institution
+    ✔ Should reject zero address
+    ✔ Should reject duplicate institution approval
+    ✔ Should reject unauthorized approval
+    ✔ Should remove an approved institution
+    ✔ Should reject removal of an unapproved institution
+
+  Learning Credential Platform Integration
+    ✔ should automatically reward 5 LRN when a credential is issued
+    ✔ should keep LRN rewards after credential revocation
+    ✔ should not reward an unapproved institution
+
+  LearningToken
+    ✔ should have the correct token information
+    ✔ should assign the admin role to the deployer
+    ✔ should allow the admin to grant MINTER_ROLE
+    ✔ should allow an authorized minter to mint reward tokens
+    ✔ should reject minting from an unauthorized account
+    ✔ should reject minting to the zero address
+    ✔ should revoke MINTER_ROLE and prevent further minting
+
+
+45 passing (3 solidity, 42 nodejs)
+
+WARNING: hre.network.connect() is deprecated and will be removed in a future version. Use hre.network.create() or hre.network.getOrCreate() instead.

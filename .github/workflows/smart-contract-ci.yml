@@ -1,0 +1,78 @@
+
+name: Smart Contract CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test-security:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Download repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Compile Solidity contracts
+      - name: Compile contracts
+        run: npm run compile
+
+      # 5. Run automated tests
+      - name: Run automated tests
+        run: npm run test
+
+      # 6. Measure code coverage
+      - name: Measure code coverage
+        run: npm run coverage
+
+      # 7. Set up Python for Slither
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 8. Install Slither and solc-select
+      - name: Install security tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install slither-analyzer solc-select
+
+      # 9. Install the required Solidity compiler
+      - name: Setup Solidity compiler
+        run: |
+          solc-select install 0.8.34
+          solc-select use 0.8.34
+          solc --version
+
+      # 10. Run Slither security analysis
+      - name: Run Slither
+        run: |
+          mkdir -p reports/security
+          slither . --json reports/security/slither-ci.json
+
+      # 11. Upload test and security reports
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-contract-reports
+          path: |
+            reports/
+            coverage/
+          if-no-files-found: warn

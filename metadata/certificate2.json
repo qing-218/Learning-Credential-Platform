@@ -1,0 +1,24 @@
+
+{
+  "name": "Artificial Intelligence Certificate",
+  "description": "Issued after completion of an artificial intelligence training program.",
+  "image": "ipfs://bafy-example-002/certificate.png",
+  "attributes": [
+    {
+      "trait_type": "Institution",
+      "value": "Example University"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Artificial Intelligence"
+    },
+    {
+      "trait_type": "Completion Date",
+      "value": "2026-11-10"
+    },
+    {
+      "trait_type": "Achievement Points",
+      "value": 200
+    }
+  ]
+}

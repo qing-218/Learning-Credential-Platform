@@ -1,0 +1,46 @@
+
+Detector: pragma
+7 different versions of Solidity are used:
+	- Version constraint ^0.8.20 is used by:
+		-^0.8.20 (node_modules/@openzeppelin/contracts/access/AccessControl.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/token/ERC721/utils/ERC721Utils.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/Context.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/Panic.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/StorageSlot.sol#5)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/math/Math.sol#4)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/math/SafeCast.sol#5)
+		-^0.8.20 (node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol#4)
+	- Version constraint >=0.8.4 is used by:
+		->=0.8.4 (node_modules/@openzeppelin/contracts/access/IAccessControl.sol#4)
+		->=0.8.4 (node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol#4)
+	- Version constraint >=0.4.16 is used by:
+		->=0.4.16 (node_modules/@openzeppelin/contracts/interfaces/IERC165.sol#4)
+		->=0.4.16 (node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol#4)
+		->=0.4.16 (node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol#4)
+	- Version constraint >=0.6.2 is used by:
+		->=0.6.2 (node_modules/@openzeppelin/contracts/interfaces/IERC4906.sol#4)
+		->=0.6.2 (node_modules/@openzeppelin/contracts/interfaces/IERC721.sol#4)
+		->=0.6.2 (node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol#4)
+		->=0.6.2 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol#4)
+		->=0.6.2 (node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol#4)
+	- Version constraint ^0.8.24 is used by:
+		-^0.8.24 (node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol#4)
+		-^0.8.24 (node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol#4)
+		-^0.8.24 (node_modules/@openzeppelin/contracts/utils/Bytes.sol#4)
+		-^0.8.24 (node_modules/@openzeppelin/contracts/utils/Strings.sol#4)
+	- Version constraint >=0.5.0 is used by:
+		->=0.5.0 (node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol#4)
+	- Version constraint ^0.8.34 is used by:
+		-^0.8.34 (contracts/AchievementManager.sol#3)
+		-^0.8.34 (contracts/CredentialNFT.sol#3)
+		-^0.8.34 (contracts/InstitutionRegistry.sol#3)
+		-^0.8.34 (contracts/LearningToken.sol#3)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#different-pragma-directives-are-used
+. analyzed (30 contracts with 102 detectors), 1 result(s) found
+INFO:Slither:reports/security/slither-project-only-after.json exists already, the overwrite is prevented
+'npx hardhat clean' running (wd: C:\Yiting File\HKUST\Autumn Fall\BlockChain\Assignment2\problem2)
+'npx hardhat clean --global' running (wd: C:\Yiting File\HKUST\Autumn Fall\BlockChain\Assignment2\problem2)
+'npx hardhat compile --force' running (wd: C:\Yiting File\HKUST\Autumn Fall\BlockChain\Assignment2\problem2)

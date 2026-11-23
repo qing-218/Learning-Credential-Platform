@@ -1,0 +1,24 @@
+
+{
+  "name": "Blockchain Development Certificate",
+  "description": "Issued after completion of the blockchain development course.",
+  "image": "ipfs://bafy-example-001/certificate.png",
+  "attributes": [
+    {
+      "trait_type": "Institution",
+      "value": "Example University"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Blockchain"
+    },
+    {
+      "trait_type": "Completion Date",
+      "value": "2026-10-15"
+    },
+    {
+      "trait_type": "Achievement Points",
+      "value": 150
+    }
+  ]
+}
