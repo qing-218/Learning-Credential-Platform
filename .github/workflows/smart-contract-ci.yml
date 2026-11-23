@@ -32,6 +32,10 @@ jobs:
       # 4. Compile Solidity contracts
       - name: Compile contracts
         run: npm run compile
+        env:
+          SEPOLIA_RPC_URL: "https://eth-sepolia.g.alchemy.com/v2/alch_wiCT76no-ceq1T_VnUHQY"
+          SEPOLIA_PRIVATE_KEY: "2b9a22b02bd119f8e4cfa4dcf873e240052b344357203cf5e48c3c29b53c6ad0"
+          ETHERSCAN_API_KEY: "EFSHG3SENUSHFSD5JT8CB4SDHW72F87CXK"
 
       # 5. Run automated tests
       - name: Run automated tests
